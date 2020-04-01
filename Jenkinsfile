@@ -1,6 +1,10 @@
 pipeline {
    agent any
 
+    tools {
+        go 'golang'
+    }
+
    stages {
       stage('Build') {
         steps {
@@ -14,11 +18,13 @@ pipeline {
      }
    }
    stage('Deploy') {
-     steps {
-       echo 'Deploying...'
-       sh 'go version'
-     }
-   }
+        steps {
+            withEnv(["PATH+EXTRA=${HOME}/go/bin"]){
+               echo 'Deploying...'
+               sh 'go version'
+            }
+        }
+      }
   }
 }
 
@@ -32,4 +38,28 @@ pipeline {
 //             }
 //         }
 //     }
+// }
+
+
+// pipeline {
+//    agent any
+   
+//     tools {
+//         go 'golang'
+//     }
+
+//     options {
+//       disableConcurrentBuilds()
+//     }
+
+//    stages {
+//       stage('Deploy') {
+//         steps {
+//             withEnv(["PATH+EXTRA=${HOME}/go/bin"]){
+//                echo 'Deploying...'
+//                sh 'go version'
+//             }
+//         }
+//       }
+//   }
 // }

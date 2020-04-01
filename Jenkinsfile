@@ -27,6 +27,7 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
+                sh 'ls'
                 sh 'docker ps'
             }
         }

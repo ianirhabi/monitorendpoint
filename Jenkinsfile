@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Speak') {
             when {
-                expression { env.NODE_NAME == 'master' }
+                expression { env.NODE_NAME == 'master2' }
             }
             steps {
                 echo "Hello, bitwiseman!"

@@ -1,5 +1,5 @@
 pipeline {
-   agent none
+   agent any
 
    stages {
       stage('Build') {
@@ -16,7 +16,7 @@ pipeline {
    stage('Deploy') {
      steps {
        echo 'Deploying...'
-       bash 'go version'
+       sh 'go version'
      }
    }
   }

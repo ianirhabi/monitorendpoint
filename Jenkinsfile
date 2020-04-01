@@ -36,7 +36,7 @@ pipeline {
     stages {
         stage('Example Build') {
             when { branch 'master2' }
-            steps {
+            steps { 
                 sh 'ls'
                 sh 'docker ps'
             }

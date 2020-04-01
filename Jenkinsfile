@@ -35,6 +35,7 @@ pipeline {
     agent { docker 'docker:stable' } 
     stages {
         stage('Example Build') {
+            when { branch 'master2' }
             steps {
                 sh 'ls'
                 sh 'docker ps'

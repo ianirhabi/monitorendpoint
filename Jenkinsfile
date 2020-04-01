@@ -16,7 +16,7 @@ pipeline {
    stage('Deploy') {
      steps {
        echo 'Deploying...'
-       go --version
+       go version
      }
    }
   }

@@ -23,11 +23,11 @@
 // }
 
 pipeline {
-    agent { docker 'maven:3-alpine' } 
+    agent { docker 'golang:1.12-alpine' } 
     stages {
         stage('Example Build') {
             steps {
-                sh 'mvn -B clean verify'
+                sh 'go version'
             }
         }
     }

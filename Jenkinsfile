@@ -23,11 +23,11 @@
 // }
 
 pipeline {
-    agent { docker 'golang:1.12-alpine' } 
+    agent { docker 'docker:stable' } 
     stages {
         stage('Example Build') {
             steps {
-                sh 'go version'
+                sh 'docker ps'
             }
         }
     }
